@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hechte wijkverbanden | Gezond Oud Netwerk</title>
+  <meta name="description" content="Wat is een hecht wijkverband? Informatie voor bewoners én voor hulpverleners, RESV's, gemeenten en zorgpartners over samenwerking tussen huisarts, wijkverpleegkundige, apotheek en fysiotherapeut in de wijk." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://gezondoud.net/hechte-wijkverbanden.html" />
+  <style>
+    @font-face { font-family: 'Inter'; src: url('fonts/inter-v20-latin-300.woff2') format('woff2'); font-weight: 300; font-display: swap; }
+    @font-face { font-family: 'Inter'; src: url('fonts/inter-v20-latin-regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+    @font-face { font-family: 'Inter'; src: url('fonts/inter-v20-latin-500.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+    @font-face { font-family: 'Inter'; src: url('fonts/inter-v20-latin-600.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+    @font-face { font-family: 'Inter'; src: url('fonts/inter-v20-latin-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --teal: #3D8B6E; --teal-light: #EBF5EF; --teal-dark: #2E6B54;
+      --navy: #1F4A42; --navy-dark: #163530;
+      --grey-bg: #F8F9FA; --grey-border: #E8ECF0;
+      --text: #1F4A42; --text-muted: #75828E; --white: #FFFFFF;
+      --oranje: #E8A13A;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; font-size: 16px; color: var(--text); background: var(--grey-bg); line-height: 1.7; }
+    header { background: var(--white); border-bottom: 1px solid var(--grey-border); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .header-inner { max-width: 1000px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo img { height: 48px; width: 48px; object-fit: contain; }
+    .logo-text { font-weight: 700; font-size: 1rem; color: var(--navy); }
+    .logo-text span { color: var(--teal); }
+    nav a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; font-weight: 500; padding: 7px 12px; border-radius: 8px; transition: all 0.2s; }
+    nav a:hover { background: var(--grey-bg); color: var(--navy); }
+    nav a.cta { background: var(--teal); color: white; font-weight: 700; }
+    @media (max-width: 700px) { nav { display: none; } }
+    .content { max-width: 780px; margin: 0 auto; padding: 32px 24px 80px; }
+    .content h2 { font-size: 1.2rem; font-weight: 700; color: var(--navy); margin: 2em 0 0.6em; padding-bottom: 8px; border-bottom: 2px solid var(--teal-light); }
+    .content h2:first-child { margin-top: 0; }
+    .content p { margin-bottom: 1em; line-height: 1.75; }
+    .content ul, .content ol { margin: 0.5em 0 1em 1.5em; }
+    .content li { margin-bottom: 0.4em; line-height: 1.65; }
+    .content strong { font-weight: 700; color: var(--navy); }
+    footer { background: var(--navy-dark); color: rgba(255,255,255,0.4); text-align: center; padding: 28px 24px; font-size: 0.82rem; margin-top: 48px; }
+    footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+
+    .artikel-header { background: var(--white); border-bottom: 1px solid var(--grey-border); padding: 40px 24px 28px; }
+    .artikel-header-inner { max-width: 780px; margin: 0 auto; }
+    .zone-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal); background: var(--teal-light); padding: 3px 12px; border-radius: 999px; margin-bottom: 14px; }
+    .artikel-header-inner h1 { font-size: clamp(1.6rem,3.5vw,2.2rem); font-weight: 700; color: var(--navy); margin-bottom: 12px; line-height: 1.2; letter-spacing: -0.02em; }
+    .artikel-header-inner > p { color: var(--text-muted); font-size: 0.92rem; max-width: 620px; margin-bottom: 22px; }
+
+    /* WEERGAVE-SCHAKELAAR */
+    .weergave-schakelaar { display: inline-flex; background: var(--grey-bg); border: 1.5px solid var(--grey-border); border-radius: 999px; padding: 4px; gap: 4px; }
+    .weergave-btn { border: none; background: none; font-family: inherit; font-size: 0.85rem; font-weight: 700; color: var(--text-muted); padding: 9px 18px; border-radius: 999px; cursor: pointer; transition: all 0.2s; }
+    .weergave-btn.actief { background: var(--teal); color: white; }
+    @media (max-width: 480px) { .weergave-schakelaar { display: flex; } .weergave-btn { flex: 1; } }
+
+    .disclaimer { background: #FEF9E7; border: 1px solid rgba(243,156,18,0.35); border-radius: 10px; padding: 14px 18px; font-size: 0.82rem; color: #7d5a00; margin-bottom: 28px; line-height: 1.6; }
+
+    /* VOORLEESBALK */
+    .voorleesbalk { display: flex; align-items: center; gap: 14px; background: var(--white); border: 1.5px solid var(--grey-border); border-radius: 12px; padding: 14px 18px; margin-bottom: 24px; flex-wrap: wrap; }
+    .voorlees-btn { display: flex; align-items: center; gap: 8px; background: var(--teal); color: white; border: none; padding: 10px 18px; border-radius: 8px; font-weight: 700; font-size: 0.86rem; cursor: pointer; font-family: inherit; transition: background 0.2s; }
+    .voorlees-btn:hover { background: var(--teal-dark); }
+    .voorlees-btn.bezig { background: var(--navy); }
+    .voorlees-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+    .voorlees-snelheid { display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--text-muted); }
+    .voorlees-snelheid select { border: 1px solid var(--grey-border); border-radius: 6px; padding: 4px 8px; font-family: inherit; font-size: 0.78rem; color: var(--navy); background: white; }
+    .voorlees-status { font-size: 0.78rem; color: var(--text-muted); margin-left: auto; }
+    .voorlees-niet-beschikbaar { display: none; font-size: 0.8rem; color: var(--text-muted); font-style: italic; }
+
+    /* PARTNERS-PANEEL */
+    .tijdlijn { display: flex; flex-direction: column; gap: 12px; margin: 8px 0 1.5em; }
+    .tijdlijn-item { display: flex; gap: 16px; align-items: baseline; }
+    .tijdlijn-jaar { flex-shrink: 0; width: 60px; font-weight: 700; color: var(--teal); font-size: 0.92rem; }
+    .tijdlijn-tekst { font-size: 0.86rem; color: var(--text); }
+
+    .rollen-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin: 8px 0 1.5em; }
+    .rol-kaart { background: var(--white); border: 1.5px solid var(--grey-border); border-radius: 10px; padding: 12px 14px; }
+    .rol-kaart.kern { border-color: var(--teal); background: var(--teal-light); }
+    .rol-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 4px; }
+    .rol-kaart.kern .rol-label { color: var(--teal-dark); }
+    .rol-naam { font-size: 0.86rem; font-weight: 700; color: var(--navy); }
+
+    .factoren-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; margin: 8px 0 1.5em; }
+    .factor-kaart { background: var(--white); border: 1px solid var(--grey-border); border-radius: 12px; padding: 16px; }
+    .factor-nr { font-size: 0.7rem; font-weight: 700; color: var(--oranje); margin-bottom: 6px; }
+    .factor-titel { font-size: 0.88rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .factor-tekst { font-size: 0.8rem; color: var(--text-muted); line-height: 1.55; }
+
+    .bronnen-lijst { list-style: none; display: flex; flex-direction: column; gap: 8px; margin: 8px 0 1.5em; }
+    .bronnen-lijst a { font-size: 0.85rem; color: var(--teal); text-decoration: none; }
+    .bronnen-lijst a:hover { text-decoration: underline; }
+    .bronnen-lijst .bron-org { color: var(--text-muted); font-size: 0.78rem; }
+
+    /* CONTACT (gedeeld, altijd zichtbaar) */
+    .contact-blok { background: var(--navy); color: white; border-radius: 14px; padding: 26px 28px; margin-top: 40px; }
+    .contact-blok h3 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+    .contact-blok p { font-size: 0.85rem; opacity: 0.85; margin-bottom: 16px; }
+    .contact-paden { display: flex; gap: 12px; flex-wrap: wrap; }
+    .contact-paden a { display: inline-block; padding: 10px 20px; border-radius: 8px; font-weight: 700; font-size: 0.86rem; text-decoration: none; white-space: nowrap; }
+    .contact-paden a.primair { background: var(--teal); color: white; }
+    .contact-paden a.secundair { background: rgba(255,255,255,0.12); color: white; border: 1px solid rgba(255,255,255,0.3); }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Hechte wijkverbanden",
+    "description": "Wat is een hecht wijkverband? Informatie voor bewoners én voor hulpverleners, RESV's, gemeenten en zorgpartners.",
+    "url": "https://gezondoud.net/hechte-wijkverbanden.html",
+    "inLanguage": "nl",
+    "isPartOf": {"@type": "WebSite", "name": "Gezond Oud Netwerk", "url": "https://gezondoud.net"}
+  }
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="gezondoud_logo.png" alt="Gezond Oud Netwerk" />
+      <div class="logo-text"><span>Gezond Oud</span> Netwerk</div>
+    </a>
+    <nav>
+      <a href="index.html">← Terug naar home</a>
+      <a href="index.html#zoeken" class="cta">Zoek een therapeut</a>
+    </nav>
+  </div>
+</header>
+
+<div class="artikel-header">
+  <div class="artikel-header-inner">
+    <div class="zone-badge">🤝 Hechte wijkverbanden</div>
+    <h1>Zorg en hulp dichtbij, goed op elkaar afgestemd</h1>
+    <p>Deze pagina legt uit wat een hecht wijkverband is — in een versie voor bewoners en een versie voor hulpverleners, RESV's, gemeenten en zorgpartners. Kies hieronder welke weergave u wilt lezen.</p>
+    <div class="weergave-schakelaar" role="tablist">
+      <button class="weergave-btn actief" id="btn-bewoners" onclick="wisselWeergave('bewoners')" role="tab" aria-selected="true">Voor bewoners</button>
+      <button class="weergave-btn" id="btn-partners" onclick="wisselWeergave('partners')" role="tab" aria-selected="false">Voor hulpverleners &amp; partners</button>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- ═══════════ PANEEL: BEWONERS ═══════════ -->
+  <div id="paneel-bewoners" class="weergave-paneel">
+
+    <div class="voorleesbalk" id="voorleesbalk">
+      <button class="voorlees-btn" id="voorlees-btn" onclick="voorlezenWisselen()">
+        <svg viewBox="0 0 24 24" fill="currentColor" id="voorlees-icoon"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+        <span id="voorlees-label">Lees dit artikel voor</span>
+      </button>
+      <div class="voorlees-snelheid">
+        Snelheid:
+        <select id="voorlees-snelheid" onchange="snelheidAanpassen()">
+          <option value="0.8">Langzaam</option>
+          <option value="1" selected>Normaal</option>
+          <option value="1.2">Snel</option>
+        </select>
+      </div>
+      <div class="voorlees-status" id="voorlees-status"></div>
+    </div>
+    <p class="voorlees-niet-beschikbaar" id="voorlees-niet-beschikbaar">Voorlezen wordt niet ondersteund in deze browser.</p>
+
+    <div class="disclaimer">
+      ⚠️ Dit artikel is algemene informatie voor bewoners. Het is geen persoonlijk advies en vervangt geen contact met uw huisarts of andere zorgverlener.
+    </div>
+
+    <div id="artikel-tekst">
+      <h2>Wat is een hecht wijkverband?</h2>
+      <p>In steeds meer wijken werken de huisarts, de wijkverpleegkundige, de apotheek en de sociaal werker (bijvoorbeeld van het wijkteam) nauw met elkaar samen. Dit noemen we een <strong>hecht wijkverband</strong>. Ze kennen elkaar, weten van elkaar wat ze doen, en zorgen er samen voor dat u niet van het kastje naar de muur gestuurd wordt als u hulp nodig heeft.</p>
+      <p>Het doel is simpel: sneller en beter geholpen worden, dichtbij huis, vooral als u met meerdere dingen tegelijk te maken heeft — bijvoorbeeld gezondheidsklachten én praktische zorgen thuis.</p>
+
+      <h2>Wie zijn erbij betrokken?</h2>
+      <p>De vaste kern van een hecht wijkverband bestaat uit:</p>
+      <ul>
+        <li><strong>De huisarts</strong> — vaak uw eerste aanspreekpunt.</li>
+        <li><strong>De wijkverpleegkundige</strong> — voor zorg en ondersteuning thuis.</li>
+        <li><strong>De apotheek</strong> — voor uw medicijnen en advies daarover.</li>
+        <li><strong>De sociaal werker of het wijkteam</strong> — voor hulp bij praktische of persoonlijke vragen.</li>
+      </ul>
+      <p>Afhankelijk van wat er in uw wijk nodig is, sluiten er soms ook andere zorgverleners aan — bijvoorbeeld een <strong>fysiotherapeut</strong>, een diëtist, of een specialist ouderengeneeskunde. Zeker als het gaat om zaken als vallen voorkomen, in beweging blijven, of herstellen na een ziekenhuisopname, is de fysiotherapeut een logische partner in zo'n wijkverband.</p>
+
+      <h2>Waarom is dit belangrijk, zeker als u ouder wordt?</h2>
+      <p>Naarmate u ouder wordt, kunnen er meer zaken tegelijk spelen: misschien wat minder stevig ter been, een medicijn erbij, en soms ook praktische zorgen. Een hecht wijkverband zorgt ervoor dat de mensen die u helpen, ook onderling weten wat er speelt — zodat u niet steeds opnieuw uw verhaal hoeft te doen.</p>
+      <p>Er is ook nadrukkelijk aandacht voor het <strong>voorkomen</strong> van problemen, niet alleen het oplossen ervan. Denk aan valpreventie, samen bewegen in de wijk, of voorlichting over het juiste gebruik van medicijnen.</p>
+
+      <h2>Wat merkt u hiervan?</h2>
+      <ul>
+        <li>Eén duidelijk aanspreekpunt, in plaats van meerdere losse contacten.</li>
+        <li>Korte lijnen tussen de zorgverleners die u helpen — zij overleggen makkelijker met elkaar.</li>
+        <li>Sneller de juiste hulp, ook als er meerdere dingen tegelijk spelen.</li>
+        <li>Meer aandacht voor voorkomen van problemen, zoals vallen of achteruitgang na een ziekenhuisopname.</li>
+      </ul>
+
+      <h2>Wat gaat er de komende jaren gebeuren?</h2>
+      <p>Vanaf 2026 worden in het hele land dit soort wijksamenwerkingen opgezet, aangejaagd door regionale samenwerkingsverbanden van zorgverleners (de zogeheten RESV's). Vanaf 2027 gaan zorgverzekeraars deze samenwerking ook officieel inkopen — wat betekent dat het steeds meer een vast, structureel onderdeel wordt van de zorg bij u in de buurt.</p>
+    </div>
+  </div>
+
+  <!-- ═══════════ PANEEL: PARTNERS ═══════════ -->
+  <div id="paneel-partners" class="weergave-paneel" style="display:none">
+
+    <h2 style="margin-top:0">Wat is een hecht wijkverband?</h2>
+    <p>Een hecht wijkverband is een samenwerking in de wijk (doorgaans 10.000 à 20.000 inwoners) tussen huisarts, wijkverpleegkundige, apotheker en sociaal domein professional, die gezamenlijk verantwoordelijkheid nemen voor de populatie — met name voor inwoners met meervoudige problematiek en complexe zorgvragen. Het streven is dat er in 2030 in elke wijk zo'n verband bestaat.</p>
+    <p>Waar dit niet organisch ontstaat, jaagt het <strong>Regionaal Eerstelijnssamenwerkingsverband (RESV)</strong> de vorming aan, in afstemming met zorgverzekeraars en het gemeentelijk domein. Het RESV coördineert ook regionaal, zodat er geen overlap of te kleine werkgebieden ontstaan, en maakt de financiële afspraken.</p>
+
+    <div class="tijdlijn">
+      <div class="tijdlijn-item"><div class="tijdlijn-jaar">2024</div><div class="tijdlijn-tekst">Visie eerstelijnszorg 2030 vastgesteld door alle betrokken partijen (onderdeel van het IZA).</div></div>
+      <div class="tijdlijn-item"><div class="tijdlijn-jaar">2026</div><div class="tijdlijn-tekst">RESV's worden regio-breed opgezet; Convenant Stevige Lokale Teams sinds 1 maart 2026 van kracht, ondersteund met ZonMw-subsidie.</div></div>
+      <div class="tijdlijn-item"><div class="tijdlijn-jaar">2027</div><div class="tijdlijn-tekst">Vanaf 1 januari worden hechte wijkverbanden als zodanig ingekocht door zorgverzekeraars.</div></div>
+    </div>
+
+    <h2>Wie zijn betrokken?</h2>
+    <p>De visie stelt dat minimaal de uitvoerende partijen uit de basisopstelling betrokken zijn. Afhankelijk van de problematiek in de wijk kan gekozen worden voor een bredere samenstelling.</p>
+    <div class="rollen-grid">
+      <div class="rol-kaart kern"><div class="rol-label">Basisopstelling</div><div class="rol-naam">Huisarts</div></div>
+      <div class="rol-kaart kern"><div class="rol-label">Basisopstelling</div><div class="rol-naam">Wijkverpleegkundige</div></div>
+      <div class="rol-kaart kern"><div class="rol-label">Basisopstelling</div><div class="rol-naam">Apotheker</div></div>
+      <div class="rol-kaart kern"><div class="rol-label">Basisopstelling</div><div class="rol-naam">Sociaal domein professional</div></div>
+      <div class="rol-kaart"><div class="rol-label">Bredere samenstelling</div><div class="rol-naam">Fysiotherapeut</div></div>
+      <div class="rol-kaart"><div class="rol-label">Bredere samenstelling</div><div class="rol-naam">Diëtist</div></div>
+      <div class="rol-kaart"><div class="rol-label">Bredere samenstelling</div><div class="rol-naam">Overige paramedici</div></div>
+      <div class="rol-kaart"><div class="rol-label">Bredere samenstelling</div><div class="rol-naam">Specialist ouderengeneeskunde</div></div>
+      <div class="rol-kaart"><div class="rol-label">Bredere samenstelling</div><div class="rol-naam">Arts verstandelijk gehandicapten</div></div>
+      <div class="rol-kaart"><div class="rol-label">Bredere samenstelling</div><div class="rol-naam">Mondzorgprofessional</div></div>
+      <div class="rol-kaart"><div class="rol-label">Bredere samenstelling</div><div class="rol-naam">Verloskundige</div></div>
+    </div>
+
+    <h2>Waarom ouderenzorg hierbij past</h2>
+    <p>De handreiking noemt expliciet preventieve activiteiten die goed passen bij een hecht wijkverband: valpreventie voor ouderen, collectieve beweegactiviteiten, voorlichting over medicijngebruik en leefstijl-wijkactiviteiten. Dat sluit direct aan op drie van de acht domeinen van het Gezond Oud Netwerk: <strong>valpreventie en balans</strong>, <strong>kwetsbaarheid en mobiliteit</strong>, en <strong>herstel na ziekenhuisopname</strong>.</p>
+    <p style="color:var(--text-muted)">De onderliggende Visie eerstelijnszorg 2030 is mede opgesteld door het KNGF (Koninklijk Nederlands Genootschap voor Fysiotherapie) — fysiotherapie is dus een erkende, gelegitimeerde partij in deze beweging, geen partij die van buitenaf aanschuift.</p>
+
+    <h2>De zes succesfactoren</h2>
+    <p>Op basis van goede praktijkvoorbeelden benoemt de handreiking zes factoren die bepalend zijn voor een succesvol hecht wijkverband.</p>
+    <div class="factoren-grid">
+      <div class="factor-kaart"><div class="factor-nr">01</div><div class="factor-titel">Gedeelde visie, verantwoordelijkheid en commitment</div><div class="factor-tekst">Alle betrokken professionals werken vanuit één gemeenschappelijke visie en nemen eigenaarschap.</div></div>
+      <div class="factor-kaart"><div class="factor-nr">02</div><div class="factor-titel">Samenwerkingsafspraken vastleggen</div><div class="factor-tekst">Bijvoorbeeld in een samenwerkingsovereenkomst, met heldere doelen en afbakening van taken.</div></div>
+      <div class="factor-kaart"><div class="factor-nr">03</div><div class="factor-titel">Organisatiemodel kiezen</div><div class="factor-tekst">Geen juridische structuur verplicht — inhoud en kwaliteit van de samenwerking staan voorop.</div></div>
+      <div class="factor-kaart"><div class="factor-nr">04</div><div class="factor-titel">Korte lijnen en laagdrempelig contact</div><div class="factor-tekst">Betrokkenen kennen elkaar, gebruiken elkaars talenten en hebben een aanpak voor conflicthantering.</div></div>
+      <div class="factor-kaart"><div class="factor-nr">05</div><div class="factor-titel">Gerichte multidisciplinaire coördinatie</div><div class="factor-tekst">Een coördinator/verbinder vervult de brugfunctie tussen organisaties, disciplines en het RESV.</div></div>
+      <div class="factor-kaart"><div class="factor-nr">06</div><div class="factor-titel">Leren, monitoren en evaluatie</div><div class="factor-tekst">Casusniveau en breed samenwerkingsoverleg, met minimaal twee evaluaties per jaar.</div></div>
+    </div>
+
+    <h2>Het Gezond Oud Netwerk als partner</h2>
+    <p>Het Gezond Oud Netwerk verbindt een groeiend aantal gespecialiseerde therapeuten op het gebied van ouderenzorg, verdeeld over acht domeinen — van valpreventie tot revalidatie na een operatie. Voor RESV's en gemeenten die in de regio Breda e.o. een hecht wijkverband vormgeven, kan dit netwerk fungeren als kant-en-klare, regionale dekking voor de fysiotherapie-component, met name voor de preventieve activiteiten die de handreiking noemt.</p>
+
+    <h2>Bronnen</h2>
+    <ul class="bronnen-lijst">
+      <li><a href="https://open.overheid.nl/documenten/83e9f7f2-6daa-448b-89dd-69866b40b026/file" target="_blank" rel="noopener">Zes succesfactoren voor het werken in hecht wijkverband</a> <span class="bron-org">— Actiz, Sociaal Werk Nederland en VNG, i.s.m. o.a. KNGF, LHV, KNMP, ZN en VWS</span></li>
+      <li><a href="https://www.lhv.nl/wp-content/uploads/2025/01/Notitie-Regionale-eerstelijnssamenwerkingsverbanden.pdf" target="_blank" rel="noopener">Uitwerking regionale eerstelijnssamenwerkingsverbanden (RESV)</a> <span class="bron-org">— LHV</span></li>
+      <li><a href="https://www.rhogo.nl/wijken/wat-is-het-regionaal-eerstelijns-samenwerkingsverband/" target="_blank" rel="noopener">Wat is het Regionaal Eerstelijns Samenwerkingsverband</a> <span class="bron-org">— RHOGO</span></li>
+      <li><a href="https://www.zn.nl/actueel/handreiking-contractering-regionale-eerstelijns-samenwerkingsverbanden-beschikbaar/" target="_blank" rel="noopener">Handreiking contractering RESV's</a> <span class="bron-org">— Zorgverzekeraars Nederland</span></li>
+      <li><a href="https://vng.nl/nieuws/visie-eerstelijnszorg-2030-vastgesteld" target="_blank" rel="noopener">Visie eerstelijnszorg 2030 vastgesteld</a> <span class="bron-org">— VNG</span></li>
+      <li><a href="https://www.de-eerstelijns.nl/2026/05/een-wijk-twee-bewegingen-hechte-wijkverbanden-ontmoeten-stevige-lokale-teams/" target="_blank" rel="noopener">Eén wijk, twee bewegingen: hechte wijkverbanden ontmoeten stevige lokale teams</a> <span class="bron-org">— De Eerste Lijns</span></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════ CONTACT (gedeeld, altijd zichtbaar) ═══════════ -->
+  <div class="contact-blok">
+    <h3>In gesprek over een hecht wijkverband in uw regio?</h3>
+    <p>Of u nu fysiotherapeut bent en wilt aansluiten, of als RESV, gemeente of zorgpartner het gesprek wilt aangaan — we denken graag mee.</p>
+    <div class="contact-paden">
+      <a href="therapeut-aanmelden.html" class="primair">Aanmelden als therapeut →</a>
+      <a href="mailto:info@vindjefysio.net" class="secundair">Neem contact op →</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ── Weergave-schakelaar (bewoners/partners) ──────────────
+  function wisselWeergave(w) {
+    document.getElementById('paneel-bewoners').style.display = w === 'bewoners' ? 'block' : 'none';
+    document.getElementById('paneel-partners').style.display = w === 'partners' ? 'block' : 'none';
+    document.getElementById('btn-bewoners').classList.toggle('actief', w === 'bewoners');
+    document.getElementById('btn-partners').classList.toggle('actief', w === 'partners');
+    document.getElementById('btn-bewoners').setAttribute('aria-selected', w === 'bewoners');
+    document.getElementById('btn-partners').setAttribute('aria-selected', w === 'partners');
+
+    if (w !== 'bewoners' && voorlezenActief) {
+      window.speechSynthesis.cancel();
+      voorlezenActief = false;
+      document.getElementById('voorlees-btn').classList.remove('bezig');
+      document.getElementById('voorlees-label').textContent = 'Lees dit artikel voor';
+      document.getElementById('voorlees-status').textContent = '';
+    }
+
+    const url = new URL(window.location);
+    if (w === 'partners') url.searchParams.set('weergave', 'partners');
+    else url.searchParams.delete('weergave');
+    history.replaceState(null, '', url);
+  }
+
+  const initieleWeergave = new URLSearchParams(window.location.search).get('weergave') === 'partners' ? 'partners' : 'bewoners';
+  if (initieleWeergave === 'partners') wisselWeergave('partners');
+
+  // ── Voorleesfunctie (Web Speech API) ──────────────────────
+  let voorlezenActief = false;
+  let huidigeUtterance = null;
+
+  function haalVoorleesbareTekst() {
+    const container = document.getElementById('artikel-tekst');
+    const elementen = container.querySelectorAll('h2, h3, p, li, td, th');
+    let zinnen = [];
+    elementen.forEach(el => {
+      const t = el.textContent.trim();
+      if (t.length > 0) zinnen.push(t);
+    });
+    return zinnen;
+  }
+
+  function voorlezenWisselen() {
+    if (!('speechSynthesis' in window)) {
+      document.getElementById('voorleesbalk').style.display = 'none';
+      document.getElementById('voorlees-niet-beschikbaar').style.display = 'block';
+      return;
+    }
+
+    const btn = document.getElementById('voorlees-btn');
+    const label = document.getElementById('voorlees-label');
+    const status = document.getElementById('voorlees-status');
+
+    if (voorlezenActief) {
+      window.speechSynthesis.cancel();
+      voorlezenActief = false;
+      btn.classList.remove('bezig');
+      label.textContent = 'Lees dit artikel voor';
+      status.textContent = '';
+      return;
+    }
+
+    const zinnen = haalVoorleesbareTekst();
+    if (zinnen.length === 0) return;
+
+    let index = 0;
+    voorlezenActief = true;
+    btn.classList.add('bezig');
+    label.textContent = 'Stop met voorlezen';
+
+    const snelheid = parseFloat(document.getElementById('voorlees-snelheid').value);
+
+    function leesVolgendeZin() {
+      if (!voorlezenActief || index >= zinnen.length) {
+        voorlezenActief = false;
+        btn.classList.remove('bezig');
+        label.textContent = 'Lees dit artikel voor';
+        status.textContent = '';
+        return;
+      }
+      status.textContent = `Zin ${index + 1} van ${zinnen.length}`;
+      huidigeUtterance = new SpeechSynthesisUtterance(zinnen[index]);
+      huidigeUtterance.lang = 'nl-NL';
+      huidigeUtterance.rate = snelheid;
+      huidigeUtterance.onend = () => {
+        index++;
+        leesVolgendeZin();
+      };
+      huidigeUtterance.onerror = () => {
+        index++;
+        leesVolgendeZin();
+      };
+      window.speechSynthesis.speak(huidigeUtterance);
+    }
+    leesVolgendeZin();
+  }
+
+  function snelheidAanpassen() {
+    if (voorlezenActief && huidigeUtterance) {
+      window.speechSynthesis.cancel();
+      voorlezenActief = false;
+      voorlezenWisselen();
+    }
+  }
+
+  if (!('speechSynthesis' in window)) {
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('voorleesbalk').style.display = 'none';
+      document.getElementById('voorlees-niet-beschikbaar').style.display = 'block';
+    });
+  }
+</script>
+
+<footer>
+  <p>&copy; 2025 Gezond Oud Netwerk &nbsp;&middot;&nbsp;
+  <a href="index.html">Home</a> &nbsp;&middot;&nbsp;
+  Onderdeel van het <a href="https://vindjefysio.net">VindJeFysio Netwerk</a></p>
+</footer>
+</body>
+</html>

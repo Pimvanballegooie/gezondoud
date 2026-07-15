@@ -358,7 +358,13 @@ function renderDomeinen() {
       <div class="domein-naam">${d.naam}</div>
       <div class="domein-sub">${d.sub}</div>
       <button class="domein-knop-groot" onclick="kiesSubcat(${d.id})">Bekijk therapeuten →</button>
-    </div>`).join('');
+    </div>`).join('') + `
+    <div class="domein-kaart" style="--dk:#1F4A42;--dkl:#E2ECE9">
+      <div class="domein-icoon">🤝</div>
+      <div class="domein-naam">Hechte wijkverbanden</div>
+      <div class="domein-sub">Samenwerking tussen huisarts, wijkverpleegkundige, apotheek en fysiotherapeut in uw wijk</div>
+      <a class="domein-knop-groot" href="hechte-wijkverbanden.html" style="display:block;text-align:center;text-decoration:none">Meer informatie →</a>
+    </div>`;
 }
 
 // ── GEOCODING ──
